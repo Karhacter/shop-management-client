@@ -1,0 +1,126 @@
+{
+    "categorys": [
+        {
+            "name": "Áo thời trang",
+            "link": "link-1",
+            "bimage": "https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/background_danhmuc_1.jpg?1706431926539",
+            "image": "https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_1.jpg?1706431926539"
+        },
+        {
+            "name": "Quần thời trang",
+            "link": "link-1",
+            "bimage": "https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/background_danhmuc_2.jpg?1706431926539",
+            "image": "https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_2.jpg?1706431926539"
+        },
+        {
+            "name": "Giày & Phụ kiện",
+            "link": "link-1",
+            "bimage": "https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/background_danhmuc_3.jpg?1706431926539",
+            "image": "https://bizweb.dktcdn.net/thumb/medium/100/491/897/themes/915864/assets/danhmuc_3.jpg?1706431926539"
+        }
+    ],
+    "productpsnew": [
+        {
+            "name": "Quần Short Nam Phối Dây Rút Họa Tiết In Form Relax",
+            "image":"https://bizweb.dktcdn.net/thumb/large/100/491/897/products/ao-thun-nam-10s23tss034-bright-w.png?v=1693028874207",
+            "cate": "Nam",
+            "size": "Size S- Đủ size",
+            "price": "390.000₫",
+            "sale": "- 43%"
+        },
+        {
+            "name": "Áo Sơ Mi Nam Tay Dài Oxford Trơn Form Fitted",
+            "image":"https://bizweb.dktcdn.net/thumb/large/100/491/897/products/10s23shl036-beige-1-1.png?v=1692629224440",
+            "cate": "Nam",
+            "size": "Size S- Đủ size",
+            "price": "390.000₫",
+            "sale": "- 20%"
+        },
+        {
+            "name": "Áo Sơ Mi Nam Oxford Tay Dài Cổ Trụ Form Fitted",
+            "image":"https://bizweb.dktcdn.net/thumb/large/100/491/897/products/10s23shl035-navy-white-ao-so-mi.png?v=1692629642783",
+            "cate": "Nam",
+            "size": "Size S- Đủ size",
+            "price": "390.000₫",
+            "sale": "- 48%"
+        },
+        {
+            "name": "Áo Sơ Mi Nam Tay Dài Trơn Form Fitted",
+            "image":"https://bizweb.dktcdn.net/thumb/large/100/491/897/products/10s23dpa025-m-blue-quan-jean-nam-1-2.jpg?v=1692767005130",
+            "cate": "Nam",
+            "size": "Size S- Đủ size",
+            "price": "390.000₫",
+            "sale": "- 28%"
+        },
+        {
+            "name": "Áo Sơ Mi Nam Tay Dài Đũi Cổ Mao Kẻ Sọc Form Regular",
+            "image":"https://bizweb.dktcdn.net/thumb/large/100/491/897/products/10s23dpa025-m-blue-quan-jean-nam-1-2.jpg?v=1692767005130",
+            "cate": "Nam",
+            "size": "Size S- Đủ size",
+            "price": "390.000₫",
+            "sale": "- 28%"
+        }
+    ],
+    "setProduct": [
+        {
+        "image":
+              "https://img.freepik.com/free-psd/poster-bookstore-ad-template_23-2148680423.jpg"
+        },
+        {
+        "image":
+            "https://sachtiengviet.com/cdn/shop/products/d7a58861d5354e7f86f20e63c33df121_700x700_crop_center.jpg?v=1691385685"
+        },
+        {
+            "image":"https://khungtranhtreotuong.com/wp-content/uploads/a-book-is-a-dream-that-you-hold-in-your-hand.jpg"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name":"Giày & Phụ kiện",
+            "category_id":2,
+            "brand_id":1,
+            "image":"https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_1.jpg?1706431926539"
+        },
+        {
+            "id": 1,
+            "name":"Giày & Phụ kiện",
+            "category_id":2,
+            "brand_id":1,
+            "image":"https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_1.jpg?1706431926539"
+        },
+        {
+            "id": 1,
+            "name":"Giày & Phụ kiện",
+            "category_id":2,
+            "brand_id":1,
+            "image":"https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_1.jpg?1706431926539"
+        },
+        {
+            "id": 1,
+            "name":"Giày & Phụ kiện",
+            "category_id":2,
+            "brand_id":1,
+            "image":"https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_1.jpg?1706431926539"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name":"Karhacter",
+            "gender": "nam",
+            "address":"Hanoi",
+            "image":"https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_1.jpg?1706431926539"
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "name":"Karhacter",
+            "gender": "nam",
+            "address":"Hanoi",
+            "image":"https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/danhmuc_1.jpg?1706431926539"
+        }
+    ]
+
+}
