@@ -45,52 +45,52 @@ import Dashboard from "../pages/backend/Dashboard";
 import { MenuEdit, MenuList } from "../pages/backend/menu";
 
 const BackendRouter = [
-  { path: "/admin", component: Dashboard },
+  { path: "/admin", element: <Dashboard /> },
 
-  { path: "/admin/product", component: ProductList },
-  { path: "/admin/product/create", component: ProductCreate },
-  { path: "/admin/product/edit/:id", component: ProductEdit },
-  { path: "/admin/product/detail/:id", component: ProductDetail },
-
-  { path: "/admin/category", component: CategoryList },
-  { path: "/admin/category/edit/:id", component: CategoryEdit },
-  { path: "/admin/category/detail/:id", component: CategoryDetail },
-
-  { path: "/admin/brand", component: BrandList },
-  { path: "/admin/brand/edit/:id", component: BrandEdit },
-  { path: "/admin/brand/show/:id", component: BrandDetail },
-
-  { path: "/admin/user", component: UserList },
-  { path: "/admin/user/create", component: UserCreate },
-  { path: "/admin/user/edit/:id", component: UserEdit },
-
-  { path: "/admin/post", component: PostList },
-  { path: "/admin/post/create", component: PostCreate },
-  { path: "/admin/post/edit/:id", component: PostEdit },
-  { path: "/admin/post/detail/:id", component: PostDetail },
-
-  { path: "/admin/topic", component: TopicList },
-
-  { path: "/admin/page/create", component: PageCreate },
-  { path: "/admin/page", component: PageList },
-  { path: "/admin/page/edit/:id", component: PageEdit },
-  { path: "/admin/page/detail/:id", component: PageDetail },
-
-  { path: "/admin/banner", component: BannerList },
-  { path: "/admin/banner/create", component: BannerCreate },
-  { path: "/admin/banner/show/:id", component: BannerDetail },
-  { path: "/admin/banner/edit/:id", component: BannerEdit },
-
-  { path: "/admin/order", component: OrderList },
-
-  { path: "/admin/customer", component: CustomerList },
-  { path: "/admin/customer/edit/:id", component: CustomerEdit },
-  { path: "/admin/customer/create", component: CustomerCreate },
-
-  { path: "/admin/menu", component: MenuList },
-  { path: "/admin/menu/edit/:id", component: MenuEdit },
-
-  { path: "/admin/contact", component: ContactList },
+  { path: "/admin/product", element: <ProductList /> },
+  { path: "/admin/product/create", element: <ProductCreate /> },
+  { path: "/admin/product/edit/:id", element: <ProductEdit /> },
+  { path: "/admin/product/detail/:id", element: <ProductDetail /> },
+  
+  { path: "/admin/category", element: <CategoryList /> },
+  { path: "/admin/category/edit/:id", element: <CategoryEdit /> },
+  { path: "/admin/category/detail/:id", element: <CategoryDetail /> },
+  
+  { path: "/admin/brand", element: <BrandList /> },
+  { path: "/admin/brand/edit/:id", element: <BrandEdit /> },
+  { path: "/admin/brand/show/:id", element: <BrandDetail /> },
+  
+  { path: "/admin/user", element: <UserList /> },
+  { path: "/admin/user/create", element: <UserCreate /> },
+  { path: "/admin/user/edit/:id", element: <UserEdit /> },
+  
+  { path: "/admin/post", element: <PostList /> },
+  { path: "/admin/post/create", element: <PostCreate /> },
+  { path: "/admin/post/edit/:id", element: <PostEdit /> },
+  { path: "/admin/post/detail/:id", element: <PostDetail /> },
+  
+  { path: "/admin/topic", element: <TopicList /> },
+  
+  { path: "/admin/page/create", element: <PageCreate /> },
+  { path: "/admin/page", element: <PageList /> },
+  { path: "/admin/page/edit/:id", element: <PageEdit /> },
+  { path: "/admin/page/detail/:id", element: <PageDetail /> },
+  
+  { path: "/admin/banner", element: <BannerList /> },
+  { path: "/admin/banner/create", element: <BannerCreate /> },
+  { path: "/admin/banner/show/:id", element: <BannerDetail /> },
+  { path: "/admin/banner/edit/:id", element: <BannerEdit /> },
+  
+  { path: "/admin/order", element: <OrderList /> },
+  
+  { path: "/admin/customer", element: <CustomerList /> },
+  { path: "/admin/customer/edit/:id", element: <CustomerEdit /> },
+  { path: "/admin/customer/create", element: <CustomerCreate /> },
+  
+  { path: "/admin/menu", element: <MenuList /> },
+  { path: "/admin/menu/edit/:id", element: <MenuEdit /> },
+  
+  { path: "/admin/contact", element: <ContactList /> }
 ];
 
 export default BackendRouter;

@@ -1,32 +1,31 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useRoutes} from "react-router-dom";
+import React, { useState } from 'react';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-
 import LayoutFrontend from "./layouts/frontend";
 import LayoutBackend from "./layouts/backend";
-import AppRouter from "./router";
-import "./App.css";
-
+import RouterSite from "./router/FrontendRouter";
+import RouterAdmin from "./router/BackendRouter";
+import NoPage from "../src/pages/frontend/NoPage";
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LayoutFrontend />}>
-          {AppRouter.FrontendRouter.map((route, index) => {
-            const Page = route.component;
-            return <Route key={index} path={route.path} element={<Page />} />;
-          })}
-        </Route>
-        <Route path="/admin" element={<LayoutBackend />}>
-          {AppRouter.BackendRouter.map((route, index) => {
-            const Page = route.component;
-            return <Route key={index} path={route.path} element={<Page />} />;
-          })}
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    let element = useRoutes([
+      {
+        path: "/",
+        element: <LayoutFrontend/>,
+        children: RouterSite,
+      },
+      {
+        path: "admin",
+        element: <LayoutBackend/>,
+        children: RouterAdmin,
+      },
+      {
+        path:"*",
+        element: <NoPage />
+      }
+    ]);
+    return element;
 }
 
 export default App;

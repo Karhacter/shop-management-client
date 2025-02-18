@@ -1,23 +1,20 @@
 import Contact from "../pages/frontend/Contact";
 import Home from "../pages/frontend/Home";
 import PageCategory from "../pages/frontend/PageCategory";
-import Topic from "../pages/frontend/Topic";
-import Product from "../pages/frontend/Product";
-import ProductDetail from "../pages/frontend/ProductDetail";
-import TopicDetail from "../pages/frontend/TopicDetail";
-import ProductCategory from "../pages/frontend/ProductCategory";
-import ProductBrand from "../pages/frontend/ProductBrand";
+import { Product,ProductDetail,ProductCategory,ProductBrand } from "../pages/frontend/product/";
+import {Topic,TopicDetail} from "../pages/frontend/topic/";
+
 
 const FrontendRouter = [
-  { path: "/", component: Home },
-  { path: "/san-pham", component: Product },
-  { path: "/san-pham/:slug", component: ProductDetail },
-  { path: "/lien-he", component: Contact },
-  { path: "/:slug", component: PageCategory },
-  { path: "/bai-viet", component: Topic },
-  { path: "/bai-viet/:slug", component: TopicDetail },
-  { path: "/san-pham/the-loai/:slug", component: ProductCategory },
-  { path: "/san-pham/nha-xuat-ban/:slug", component: ProductBrand },
+  { path: "/", element: <Home/> },
+  { path: "/san-pham", element: <Product/> },
+  { path: "/san-pham/:slug", element: <ProductDetail/> },
+  { path: "/lien-he", element: <Contact/> },
+  { path: "/:slug", element: <PageCategory /> },
+  { path: "/bai-viet", element: <Topic /> },
+  { path: "/bai-viet/:slug", element: <TopicDetail /> },
+  { path: "/san-pham/the-loai/:slug", element: <ProductCategory/> },
+  { path: "/san-pham/nha-xuat-ban/:slug", element: <ProductBrand/> },
 ];
 
 export default FrontendRouter;

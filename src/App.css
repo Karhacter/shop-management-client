@@ -1,5 +1,6 @@
+@import "tailwindcss";
 
- .main-product-item {
+.main-product-item {
    display: block;
    width: 100%;
    margin: auto;
