@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import TopicItem from "./TopicItem";
-import PostService from "../../services/PostService";
+import PostService from "../../../services/PostService";
 import { Link, Navigate, useParams } from "react-router-dom";
-import Pagination from "../Pagination";
-import BrandService from "../../services/BrandService";
-import CategoryService from "../../services/CategoryService";
+import Pagination from "../../Pagination";
+import BrandService from "../../../services/BrandService";
+import CategoryService from "../../../services/CategoryService";
 const Topic = () => {
   const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);

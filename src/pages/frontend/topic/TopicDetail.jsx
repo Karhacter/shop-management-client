@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PostService from "../../services/PostService";
+import PostService from "../../../services/PostService";
 import { Link, useParams } from "react-router-dom";
 import TopicItem from "./TopicItem";
 

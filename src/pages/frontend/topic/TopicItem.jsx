@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { urlImage } from "../../config";
+import { urlImage } from "../../../config";
 
 const TopicItem = (props) => {
   const topic = props.topic;
