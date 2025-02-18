@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductService from "../../../../services/ProductService";
-import ProductItem from "../../ProductItem";
+import ProductItem from "../../product/ProductItem";
 
 const ProductPop = () => {
   const [products, setProducts] = useState([]);

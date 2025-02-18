@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import ProductService from "../../services/ProductService";
+import ProductService from "../../../services/ProductService";
 import { Link, Navigate, useParams } from "react-router-dom";
 import ProductItem from "./ProductItem";
-import BrandService from "../../services/BrandService";
-import Pagination from "../Pagination";
-const ProductBrand = () => {
-  const [brand, setbrand] = useState({});
+import CategoryService from "../../../services/CategoryService";
+import BrandService from "../../../services/BrandService";
+import Pagination from "../../Pagination";
+
+const ProductCategory = () => {
+  const [category, setCategory] = useState({});
+  const [brands, setBrands] = useState({});
   let { slug } = useParams();
   const [products, setProducts] = useState([]);
   const [limit, setLimit] = useState(10);
-  const [brands, setBrands] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [offset, setOffset] = useState(0);
   const [totalProducts, setTotalProducts] = useState(0);
@@ -22,22 +24,26 @@ const ProductBrand = () => {
 
   useEffect(() => {
     (async () => {
-      const result = await BrandService.detail(slug, 4);
+      const result = await CategoryService.detail(slug, 4);
       if (result.status === true) {
-        const brandObject = Array.isArray(result.brand)
-          ? result.brand[0]
-          : result.brand;
-        setbrand(brandObject);
+        const categoryObject = Array.isArray(result.category)
+          ? result.category[0]
+          : result.category;
+        setCategory(categoryObject);
       }
     })();
   }, [slug]);
 
   useEffect(() => {
     (async () => {
-      const result2 = await ProductService.list_brand(brand.id, limit);
+      const result2 = await ProductService.list_product_category(
+        category.id,
+        1,
+        limit
+      );
       setProducts(result2.products);
     })();
-  }, [limit, brand.id]);
+  }, [limit, category.id]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -57,7 +63,7 @@ const ProductBrand = () => {
                 </Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                {brand.name}
+                {category.name}
               </li>
             </ol>
           </nav>
@@ -121,10 +127,10 @@ const ProductBrand = () => {
               </ul>
             </div>
             <div className="col-md-9 order-1 order-md-2">
-              <div className="brand-title bg-main">
-                <h3 className="fs-5 py-3 text-center">{brand.name}</h3>
+              <div className="category-title bg-main">
+                <h3 className="fs-5 py-3 text-center">{category.name}</h3>
               </div>
-              <div className="product-brand mt-3">
+              <div className="product-category mt-3">
                 <div className="row product-list">
                   {products &&
                     products.length > 0 &&
@@ -144,7 +150,7 @@ const ProductBrand = () => {
               <Pagination
                 limit={limit}
                 currentPage={currentPage}
-                url={"/san-pham/nha-xuat-ban"} // Example base URL
+                url={"/san-pham/the-loai"} // Example base URL
                 onPageChange={handlePageChange}
                 total={totalProducts}
               />
@@ -156,4 +162,4 @@ const ProductBrand = () => {
   );
 };
 
-export default ProductBrand;
+export default ProductCategory;

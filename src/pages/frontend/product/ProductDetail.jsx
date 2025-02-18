@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import ProductService from "../../services/ProductService";
-import ProductItem from "./ProductItem";
-import { urlImage } from "../../config.js";
+import ProductService from "../../../services/ProductService.js";
+import ProductItem from "./ProductItem.jsx";
+import { urlImage } from "../../../config.js";
 
 const ProductDetail = () => {
   let { slug } = useParams();

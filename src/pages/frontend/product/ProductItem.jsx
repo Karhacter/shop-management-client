@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { urlImage } from "../../config.js";
+import { urlImage } from "../../../config.js";
 import { useEffect, useState } from "react";
-import CategoryService from "../../services/CategoryService.js";
-import BrandService from "../../services/BrandService.js";
+import CategoryService from "../../../services/CategoryService.js";
+import BrandService from "../../../services/BrandService.js";
 
 const ProductItem = (props) => {
   const product = props.product;
