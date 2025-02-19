@@ -3,7 +3,7 @@ import Home from "../pages/frontend/Home";
 import PageCategory from "../pages/frontend/PageCategory";
 import { Product,ProductDetail,ProductCategory,ProductBrand } from "../pages/frontend/product/";
 import {Topic,TopicDetail} from "../pages/frontend/topic/";
-
+import Login from "../pages/frontend/account/LoginForm";
 
 const FrontendRouter = [
   { path: "/", element: <Home/> },
@@ -15,6 +15,7 @@ const FrontendRouter = [
   { path: "/bai-viet/:slug", element: <TopicDetail /> },
   { path: "/san-pham/the-loai/:slug", element: <ProductCategory/> },
   { path: "/san-pham/nha-xuat-ban/:slug", element: <ProductBrand/> },
+  { path: "/dang-nhap", element: <Login />}
 ];
 
 export default FrontendRouter;
