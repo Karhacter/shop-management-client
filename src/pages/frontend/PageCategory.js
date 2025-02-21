@@ -40,7 +40,7 @@ const Page = () => {
                 <li className="list-group-item bg-main py-3">Các trang khác</li>
                 <li className="list-group-item">
                   <Link
-                    to="http://localhost:3000/chinh-sach-hoan-tien"
+                    to="http://localhost:3000/home/chinh-sach-hoan-tien"
                     className="text-decoration-none"
                   >
                     Chính sách mua hàng
@@ -48,7 +48,7 @@ const Page = () => {
                 </li>
                 <li className="list-group-item">
                   <Link
-                    to="http://localhost:3000/chinh-sach-van-chuyen"
+                    to="http://localhost:3000/home/chinh-sach-van-chuyen"
                     className="text-decoration-none"
                   >
                     Chính sách vận chuyển
@@ -56,7 +56,7 @@ const Page = () => {
                 </li>
                 <li className="list-group-item">
                   <Link
-                    to="http://localhost:3000/chinh-sach-doi-hang"
+                    to="http://localhost:3000/home/chinh-sach-doi-hang"
                     className="text-decoration-none"
                   >
                     Chính sách đổi trả
@@ -64,7 +64,7 @@ const Page = () => {
                 </li>
                 <li className="list-group-item">
                   <Link
-                    to="http://localhost:3000/chinh-sach-bao-hanh"
+                    to="http://localhost:3000/home/chinh-sach-bao-hanh"
                     className="text-decoration-none"
                   >
                     Chính sách bảo hành

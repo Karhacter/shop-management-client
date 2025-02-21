@@ -38,8 +38,8 @@ const LoginForm = () => {
 
         localStorage.setItem("sessionToken", token);
         localStorage.setItem("userData", JSON.stringify(userData)); // Make sure `userData` has all the fields you need
-
         navigate("/home/profile");
+        window.location.reload();
       } else {
         console.error("Unexpected response structure:", response);
         setErrors({ general: "Unexpected response structure" });
@@ -84,6 +84,7 @@ const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               id="password"
+              name="password"
               className="form-control"
               placeholder="Enter your password"
               required
@@ -92,13 +93,39 @@ const LoginForm = () => {
                   <span className="text-danger">{errors.email}</span>
             )}
           </div>
-          <button type="submit" className="btn btn-primary w-100">
+          
+          {errors.general && (
+                <div className="alert alert-danger">{errors.general}</div>
+              )}
+            <div className="d-flex justify-content-between align-items-center mb-4">
+                <div className="form-check">
+                  <input
+                    className="form-check-input me-2"
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={() => setRememberMe(!rememberMe)}
+                    id="rememberMe"
+                  />
+                  <label className="form-check-label" htmlFor="rememberMe">
+                    Remember me
+                  </label>
+                </div>
+                <Link to="/forgot_password" className="text-body">
+                  Forgot password?
+                </Link>
+              </div>
+            <button 
+              type="submit" 
+              className="btn btn-primary w-100"
+              data-mdb-button-init
+              data-mdb-ripple-init
+            >
             Login
           </button>
         </form>
         <p className="text-center text-muted mt-3">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-decoration-none">
+          <Link to="/register" className="text-decoration-none">
             Sign up
           </Link>
         </p>
