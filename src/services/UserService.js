@@ -16,6 +16,9 @@ const UserService = {
   show: async (id) => {
     return await httpAxios.get(`user/show/${id}`);
   },
+  login: async(user) => {
+    return await httpAxios.post("user/login", user);
+  }
 };
 
 export default UserService;

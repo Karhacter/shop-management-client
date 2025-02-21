@@ -1,9 +1,12 @@
 import BackendRouter from "./BackendRouter";
 import FrontendRouter from "./FrontendRouter";
+import RouterLogin from './RouterLogin'
+
 
 const AppRouter = {
-  FrontendRouter: FrontendRouter,
-  BackendRouter: BackendRouter,
+  "RouterSite": FrontendRouter,
+  "RouterAdmin": BackendRouter,
+  "RouterLogin":RouterLogin,
 };
 
 export default AppRouter;
