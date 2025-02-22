@@ -20,6 +20,7 @@ const Header = () => {
     setIsLoggedIn(false);
   };
 
+
   return (
     <section className="kah-header pt-1 bg-white border-bottom">
       <div className="container">
@@ -62,7 +63,7 @@ const Header = () => {
                 </>
               )}
               <div className="col-md-3">
-                <Link to="/home/checkout" className="text-decoration-none">
+                <Link to="/home/cart" className="text-decoration-none">
                   <GiShoppingBag size={"50px"} className="pt-2" />
                 </Link>
               </div>
