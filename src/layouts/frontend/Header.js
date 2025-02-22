@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { GiShoppingBag } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../asset/logo1.jpg";
 import Menu from "./MainMenu";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const navigate = useNavigate();
   // Check localStorage for login status
   useEffect(() => {
     const user = localStorage.getItem("userData"); // Adjust key based on your storage logic
@@ -16,7 +16,9 @@ const Header = () => {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("user"); // Remove user data
+    navigate("/home/login");
+    window.location.reload();
+    localStorage.removeItem("userData"); // Remove user data
     setIsLoggedIn(false);
   };
 

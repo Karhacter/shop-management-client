@@ -6,8 +6,9 @@ import Copyright from "./Copyright";
 import { useCallback, useEffect, useState } from "react";
 
 const LayoutFrontend = () => {
-
+  // back to top
   const [ShowGoTop, setShowGoTop] = useState(false);
+
   const handleScroll = useCallback(() => {
     setShowGoTop(window.scrollY > 500);
   }, []);
