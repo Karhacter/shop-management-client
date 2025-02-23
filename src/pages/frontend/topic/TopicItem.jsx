@@ -7,7 +7,7 @@ const TopicItem = (props) => {
     <>
       <div className="col-4 col-md-4">
         <div className="post-item-image">
-          <Link to={"/bai-viet/" + topic.slug}>
+          <Link to={"/home/blog/" + topic.slug}>
             <img
               src={urlImage + "topics/" + topic.image}
               className="img-fluid"
@@ -18,9 +18,16 @@ const TopicItem = (props) => {
       </div>
       <div className="col-8 col-md-8">
         <h2 className="post-item-title fs-5 py-1">
-          <Link to={"/bai-viet/" + topic.slug}>{topic.title}</Link>
+          <Link to={"/home/blog/" + topic.slug}>{topic.title}</Link>
         </h2>
-        <p>{topic.detail.substring(0, 200)}</p>
+        <p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                topic?.detail.substring(0, 200) || "No content available.",
+            }}
+          />
+        </p>
       </div>
     </>
   );

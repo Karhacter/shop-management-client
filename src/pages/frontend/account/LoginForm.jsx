@@ -11,20 +11,20 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!email || !password) {
       setErrors({ general: "Email và mật khẩu không được để trống." });
       return;
     }
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Mẫu kiểm tra email cơ bản
     if (!emailPattern.test(email)) {
-        setErrors({ general: "Email không hợp lệ." });
-        return;
+      setErrors({ general: "Email không hợp lệ." });
+      return;
     }
     const validationErrors = Validation({ email, password });
     if (Object.keys(validationErrors).length > 0) {
-        setErrors(validationErrors);
-        return;
+      setErrors(validationErrors);
+      return;
     }
     const user = { email, password };
 
@@ -38,20 +38,18 @@ const LoginForm = () => {
 
         localStorage.setItem("sessionToken", token);
         localStorage.setItem("userData", JSON.stringify(userData)); // Make sure `userData` has all the fields you need
-        navigate("/home/profile");
-        window.location.reload();
+        window.location.href = "/home";
       } else {
         console.error("Unexpected response structure:", response);
         setErrors({ general: "Unexpected response structure" });
       }
     } catch (error) {
       console.error("Error during login:", error.message);
-      if (error.response && error.response.status === 401) 
-      {
+      if (error.response && error.response.status === 401) {
         setErrors({ general: "Wrong email or password. Please try again." });
       } else {
         setErrors({ general: "An error has occurred. Please try again." });
-      }    
+      }
     }
   };
 
@@ -90,36 +88,36 @@ const LoginForm = () => {
               required
             />
             {errors.email && (
-                  <span className="text-danger">{errors.email}</span>
+              <span className="text-danger">{errors.email}</span>
             )}
           </div>
-          
+
           {errors.general && (
-                <div className="alert alert-danger">{errors.general}</div>
-              )}
-            <div className="d-flex justify-content-between align-items-center mb-4">
-                <div className="form-check">
-                  <input
-                    className="form-check-input me-2"
-                    type="checkbox"
-                    checked={rememberMe}
-                    onChange={() => setRememberMe(!rememberMe)}
-                    id="rememberMe"
-                  />
-                  <label className="form-check-label" htmlFor="rememberMe">
-                    Remember me
-                  </label>
-                </div>
-                <Link to="/forgot_password" className="text-body">
-                  Forgot password?
-                </Link>
-              </div>
-            <button 
-              type="submit" 
-              className="btn btn-primary w-100"
-              data-mdb-button-init
-              data-mdb-ripple-init
-            >
+            <div className="alert alert-danger">{errors.general}</div>
+          )}
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <div className="form-check">
+              <input
+                className="form-check-input me-2"
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+                id="rememberMe"
+              />
+              <label className="form-check-label" htmlFor="rememberMe">
+                Remember me
+              </label>
+            </div>
+            <Link to="/forgot_password" className="text-body">
+              Forgot password?
+            </Link>
+          </div>
+          <button
+            type="submit"
+            className="btn btn-primary w-100"
+            data-mdb-button-init
+            data-mdb-ripple-init
+          >
             Login
           </button>
         </form>

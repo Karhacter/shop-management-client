@@ -5,11 +5,13 @@ import BannerItem from "./Banners";
 import Search from "./Search";
 import { SetProduct, ProdcutPop, NewProduct } from "./product";
 import Collection from "./Collection";
-import ProductPop from "./product/ProdcutPop";
 import BannerSlide from "./BannerSlide";
 import ModLast from "./ModLast";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  // show the button go to the top of the website
+  
   const listsetproduct = Database.setProduct;
   const listchinhsach = [
     {
@@ -77,13 +79,14 @@ const Home = () => {
         "https://www.zhauthor.com/wp-content/uploads/2017/05/What-Makes-A-Book-Banner.jpg",
     },
   ];
+  
   return (
     <h1>
       <section className="kah-maincontent">
         <div className="kah-slider">
           <BannerSlide />
         </div>
-
+        {/* toan bo chinh sach  */}
         <div className="kah-chinhsach py-4 border-bottom">
           <div className="container-fluid">
             <div className="row">
@@ -97,6 +100,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+        
+        {/* UI search */}
         <div className="kah-search py-4 border-bottom">
           <div className="container-fluid">
             <div className="row">
@@ -106,6 +111,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* coupun list */}
         <div className="kah-coupunlist py-1">
           <div className="container-fluid py-5 pb-0">
             <div className="row">
@@ -119,6 +126,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* banner list */}
         <div className="kah-banner py-5 ">
           <div className="container-fluid">
             <div className="row">
@@ -132,6 +141,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* product list */}
         <div className="kah-productlist p-2 maincontent">
           <div className="container-fluid">
             <h2 className="title-module fw-bold">Sản phẩm nổi bật</h2>
@@ -169,12 +180,12 @@ const Home = () => {
                     Phụ Kiện
                   </a>
                 </li>
-                <a
-                  href="#"
+                <Link
+                  to="/home/product-all"
                   className="text-decoration-none text-white btn btn-dark rounded-5 position-absolute end-0 bottom-3 "
                 >
                   Xem thêm
-                </a>
+                </Link>
               </ul>
             </div>
             <div className="row">
@@ -184,6 +195,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* set product list */}
         <div className="kah-setproduct p-2 py-5">
           <div className="container-fluid">
             <h2 className="title-module fw-bold">Set sản phẩm nổi bật</h2>
@@ -198,18 +211,20 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* new product list */}
         <div className="kah-productnew p-2 pt-3">
           <div className="container-fluid">
             <div className="row">
               <h2 className="title-module fw-bold">
                 <span>Sản phẩm mới</span>
                 <span className="float-end">
-                  <a
-                    href="#"
+                  <Link
+                    to="/home/product-all"
                     className="text-decoration-none text-white btn btn-dark rounded-5"
                   >
                     Xem thêm
-                  </a>
+                  </Link>
                 </span>
               </h2>
 
@@ -221,6 +236,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* like product list */}
         <div className="kah-productlike p-2 pt-4">
           <div className="pt-2">
             <div className="row">
@@ -234,6 +251,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+       
         <ModLast />
       </section>
     </h1>

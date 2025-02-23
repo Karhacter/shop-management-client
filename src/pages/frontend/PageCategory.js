@@ -3,13 +3,17 @@ import PostService from "../../services/PostService";
 import { Link, useParams } from "react-router-dom";
 
 const Page = () => {
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState(null);
   let { slug } = useParams();
   useEffect(() => {
     (async () => {
-      const result = await PostService.detail(slug, 4);
-      setPost(result.post);
-      console.log(result.post);
+      try {
+        const result = await PostService.detail(slug, 4);
+        console.log("Fetched post:", result); // Debugging
+        setPost(result?.post || {}); // Ensure post is an object
+      } catch (error) {
+        console.error("Error fetching post:", error);
+      }
     })();
   }, [slug]);
 
@@ -73,9 +77,14 @@ const Page = () => {
               </ul>
             </div>
             <div className="col-md-9 order-1 order-md-2">
-              <h1 className="fs-2 text-main">{post.title}</h1>
-              <p>{post.detail}</p>
-              <img alt="" />
+              <h1 className="fs-2 text-main">
+                {post?.title || "No Title Available"}
+              </h1>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: post?.detail || "No content available.",
+                }}
+              />
             </div>
           </div>
         </div>

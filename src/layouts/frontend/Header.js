@@ -15,13 +15,12 @@ const Header = () => {
     }
   }, []);
 
+  // handle logout function
   const handleLogout = () => {
-    navigate("/home/login");
-    window.location.reload();
     localStorage.removeItem("userData"); // Remove user data
     setIsLoggedIn(false);
+    window.location.href = "/";
   };
-
 
   return (
     <section className="kah-header pt-1 bg-white border-bottom">
@@ -45,7 +44,10 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="col-md-4 pt-3">
-                    <Link className="text-decoration-none" onClick={handleLogout}>
+                    <Link
+                      className="text-decoration-none"
+                      onClick={handleLogout}
+                    >
                       Logout
                     </Link>
                   </div>

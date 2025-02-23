@@ -68,7 +68,13 @@ const TopicDetail = () => {
             </div>
             <div class="col-md-9 order-1 order-md-2">
               <h1 class="fs-2 text-main">{post.title}</h1>
-              <p>{post.detail}</p>
+              <p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: post?.detail || "No content available.",
+                  }}
+                />
+              </p>
               <h3 class="fs-4 text-main">
                 <strong>Bài viết khác</strong>
               </h3>

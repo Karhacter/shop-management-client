@@ -1,70 +1,89 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Pagination({ total, limit, onPageChange, currentPage, url }) {
-  const [numPages, setNumPages] = useState(Math.ceil(total / limit));
+const Pagination = ({ total, limit, currentPage, onPageChange, url }) => {
+  const numPages = Math.ceil(total / limit);
+  if (numPages <= 1) return null; // No pagination needed
 
-  const renderPageLinks = () => {
-    const links = [];
-    if (numPages === 1) return links;
-
-    links.push(
-      <li key="first" className="page-item">
-        <a className="page-link" href={`${url}&page=1`}>
-          Đầu
-        </a>
-      </li>
-    );
-
-    links.push(
-      <li key="prev" className="page-item">
-        <a className="page-link" href={`${url}&page=${currentPage - 1}`}>
-          &laquo;
-        </a>
-      </li>
-    );
-
-    let startPage = 1;
-    if (currentPage > 3 && numPages > 5) {
-      startPage = Math.min(currentPage - 2, numPages - 4);
-    }
-
-    const endPage = Math.min(startPage + 4, numPages);
-
-    for (let i = startPage; i <= endPage; i++) {
-      links.push(
-        <li
-          key={i}
-          className={`page-item ${currentPage === i ? "active" : ""}`}
-        >
-          <a className="page-link" href={`${url}&page=${i}`}>
-            {i}
-          </a>
-        </li>
-      );
-    }
-
-    links.push(
-      <li key="next" className="page-item">
-        <a className="page-link" href={`${url}&page=${currentPage + 1}`}>
-          &raquo;
-        </a>
-      </li>
-    );
-
-    links.push(
-      <li key="last" className="page-item">
-        <a className="page-link" href={`${url}&page=${numPages}`}>
-          Cuối
-        </a>
-      </li>
-    );
-
-    return links;
-  };
+  const getPageLink = (pageNumber) => `${url}?page=${pageNumber}`;
 
   return (
-    <ul className="pagination justify-content-center">{renderPageLinks()}</ul>
+    <nav>
+      <ul className="pagination justify-content-center">
+        {/* First & Previous */}
+        <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+          <Link
+            className="page-link"
+            to={getPageLink(1)}
+            onClick={(e) => {
+              if (currentPage === 1) e.preventDefault();
+              else onPageChange(1);
+            }}
+          >
+            Đầu
+          </Link>
+        </li>
+        <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+          <Link
+            className="page-link"
+            to={getPageLink(currentPage - 1)}
+            onClick={(e) => {
+              if (currentPage === 1) e.preventDefault();
+              else onPageChange(currentPage - 1);
+            }}
+          >
+            &laquo;
+          </Link>
+        </li>
+
+        {/* Page Numbers */}
+        {Array.from({ length: numPages }, (_, i) => i + 1).map((page) => (
+          <li
+            key={page}
+            className={`page-item ${currentPage === page ? "active" : ""}`}
+          >
+            <Link
+              className="page-link"
+              to={getPageLink(page)}
+              onClick={(e) => {
+                if (currentPage === page) e.preventDefault();
+                else onPageChange(page);
+              }}
+            >
+              {page}
+            </Link>
+          </li>
+        ))}
+
+        {/* Next & Last */}
+        <li
+          className={`page-item ${currentPage === numPages ? "disabled" : ""}`}
+        >
+          <Link
+            className="page-link"
+            to={getPageLink(currentPage + 1)}
+            onClick={(e) => {
+              if (currentPage >= numPages) e.preventDefault();
+              else onPageChange(currentPage + 1);
+            }}
+          >
+            &raquo;
+          </Link>
+        </li>
+        <li
+          className={`page-item ${currentPage === numPages || total === 0 ? "disabled" : ""}`}
+        >
+          <Link
+            className="page-link"
+            to={getPageLink(numPages)}
+            onClick={() => onPageChange(numPages)}
+          >
+            Cuối
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
-}
+};
 
 export default Pagination;
